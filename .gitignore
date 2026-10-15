@@ -1,0 +1,11 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# VS Code (ajusta esta regla si quieres compartir configuración)
+.vscode/
