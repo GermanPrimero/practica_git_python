@@ -1,6 +1,6 @@
 import pytest
 
-from app import calcular_iva, validar_nombre
+from app import calcular_iva, validar_nombre, es_cadena_valida
 
 
 def test_validar_nombre_quita_espacios_exteriores():
@@ -28,3 +28,20 @@ def test_calcular_iva_con_porcentaje_personalizado():
 def test_calcular_iva_rechaza_precio_negativo():
     with pytest.raises(ValueError, match="precio no puede ser negativo"):
         calcular_iva(-1)
+
+'''Nuevas funciones añadidas'''
+def test_es_cadena_valida():
+    assert es_cadena_valida("Hola") is True
+
+
+def test_es_cadena_valida_con_espacios():
+    assert es_cadena_valida("  Hola  ") is True
+
+
+def test_es_cadena_vacia():
+    assert es_cadena_valida("   ") is False
+
+
+def test_es_cadena_valida_rechaza_tipo_incorrecto():
+    with pytest.raises(TypeError):
+        es_cadena_valida(123)
