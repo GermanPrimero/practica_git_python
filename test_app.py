@@ -31,7 +31,7 @@ def test_calcular_iva_rechaza_precio_negativo():
 
 '''Nuevas funciones añadidas'''
 def test_es_cadena_valida():
-    assert es_cadena_valida("Hola") is True
+    assert es_cadena_valida("Hola")
 
 
 def test_es_cadena_valida_con_espacios():
@@ -45,3 +45,6 @@ def test_es_cadena_vacia():
 def test_es_cadena_valida_rechaza_tipo_incorrecto():
     with pytest.raises(TypeError):
         es_cadena_valida(123)
+'''Test que siempre fallará'''
+def test_fallo_intencionado():
+     assert False, "Fallo intencionado para probar el pipeline"
