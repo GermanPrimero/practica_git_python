@@ -19,6 +19,13 @@ def calcular_iva(precio: float, porcentaje: float = 21) -> float:
         raise ValueError("El porcentaje no puede ser negativo.")
     return round(precio * (1 + porcentaje / 100), 2)
 
+'''Nueva función'''
+def es_cadena_valida(texto: str) -> bool:
+    """Comprueba si una cadena contiene texto no vacío."""
+    if not isinstance(texto, str):
+        raise TypeError("El valor debe ser una cadena de texto.")
+
+    return bool(texto.strip())
 
 def main() -> None:
     nombre = validar_nombre("  Ana  ")
